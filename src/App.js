@@ -4,10 +4,10 @@ import Confetti from 'react-confetti'
 
 const faces = {
   1: '🍕',
-  2: '🎲',
-  3: '🤖',
+  2: '👻',
+  3: '😾',
   4: '👽',
-  5: '🎃',
+  5: '🤡',
   6: '🌼'
 }
 
@@ -15,6 +15,7 @@ export default function App() {
 
   const [dice, setDice] = React.useState(allNewDice())
   const [tenzies, setTenzies] = React.useState(false)
+  const [count, setCount] = React.useState(0)
 
   React.useEffect(() => {
     const allHeld = dice.every(die => die.isHeld)
@@ -51,8 +52,10 @@ export default function App() {
       }))
     } else {
       setTenzies(false)
+      setCount(prevCount => prevCount = -1)
       setDice(allNewDice())
       }
+      return setCount(prevCount => prevCount +1)
     }
 
   function holdDice(id) {
@@ -71,6 +74,7 @@ export default function App() {
     <div className="dice-container">
         {diceElements}
     </div>
+    <p className="roll-count">Dice rolls: <span className="count">{count}</span></p>
     <button 
         className="roll-dice" 
         onClick={rollDice}

@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background-color: #0B2434;
+  background-color: #0b2234b0;
   padding: 20px;
   font-family: 'Karla', sans-serif;
 }
@@ -75,4 +75,13 @@ main {
 
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.roll-count {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.count {
+  font-weight: bold;
 }
