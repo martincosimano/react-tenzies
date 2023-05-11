@@ -4,10 +4,10 @@ import Confetti from 'react-confetti'
 
 const faces = {
   1: '🍕',
-  2: '🤡',
+  2: '🎲',
   3: '🤖',
   4: '👽',
-  5: '🐻',
+  5: '🎃',
   6: '🌼'
 }
 
@@ -66,7 +66,7 @@ export default function App() {
   return (
     <main>
     {tenzies && <Confetti />}
-    <h1 className="title">Tenzies</h1>
+    <h1 className="title">Emoji Tenzies</h1>
     <p className="instructions">Roll until all dice show the same value. Click to hold a die.</p>
     <div className="dice-container">
         {diceElements}
