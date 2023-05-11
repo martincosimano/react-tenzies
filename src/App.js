@@ -8,7 +8,11 @@ export default function App() {
   function allNewDice() {
     const newDice = []
     for (let i = 0; i < 9; i++) {
-      newDice.push(Math.ceil(Math.random() * 6))
+      newDice.push({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false,
+        id: Math.random() * 100000
+      })
     }
     return newDice
   }
@@ -17,7 +21,7 @@ export default function App() {
     setDice(allNewDice())
   }
 
-  const diceElements = dice.map(die => <Dice value={die} />)
+  const diceElements = dice.map(die => <Dice key={die.id} value={die.value} isHeld={die.isHeld} />)
 
 
   return (
