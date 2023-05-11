@@ -2,6 +2,15 @@ import React from 'react'
 import Dice from './components/Dice'
 import Confetti from 'react-confetti'
 
+const faces = {
+  1: '🍕',
+  2: '🤡',
+  3: '🤖',
+  4: '👽',
+  5: '🐻',
+  6: '🌼'
+}
+
 export default function App() {
 
   const [dice, setDice] = React.useState(allNewDice())
@@ -16,9 +25,12 @@ export default function App() {
     }
   }, [dice])
 
+  console.log(faces[1])
+
   function generateNewDie() {
+    const value = Math.ceil(Math.random() * 6)
     return {
-      value: Math.ceil(Math.random() * 6),
+      value: faces[value],
       isHeld: false,
       id: Math.ceil(Math.random() * 100000)
     }
